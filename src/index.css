@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply p-0 m-0 box-border;
+}
+
+.main-nav li .active {
+  @apply md:text-blue-700;
+  /* background-color: blue; */
+}
+
+.app-nav .active {
+  @apply bg-gray-800;
+}
+
+.loginBtn .active {
+  @apply opacity-[0.9];
+}
+
+.items-list::-webkit-scrollbar {
+  display: none;
+}
+
+.home {
+  background-image: url("/images/worldmap_tab.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.home div {
+  background-image: linear-gradient(
+    rgba(36, 42, 46, 0.8),
+    rgba(36, 42, 46, 0.8)
+  );
+}
+
+/* leaflet */
+.leaflet-container {
+  @apply z-[1];
+}
+
+.react-datepicker-popper,
+.react-datepicker__tab-loop,
+.react-datepicker {
+  @apply scale-[0.9] z-50 font-[.8em];
+}
+
+.add_location input,
+textarea {
+  @apply bg-[rgb(107,114,128)] px-3 py-1 rounded-md text-lg w-full outline-none;
+}
+
+.add_location label {
+  @apply lg:text-xl md:font-medium;
+}
