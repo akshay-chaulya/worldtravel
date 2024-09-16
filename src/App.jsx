@@ -10,7 +10,6 @@ import {
   ResetPassword,
   Signup,
   VerifyEmail,
-  Posts,
 } from "./pages";
 import {
   AddCitiesForm,
@@ -48,7 +47,6 @@ function App() {
 
           {/* Protected Admin Routes */}
           <Route element={<PrivateRoute />}>
-            <Route path="posts" element={<Posts />} />
             <Route path="/app" element={<AppLayout />}>
               <Route index element={<Navigate replace:true to="cities" />} />
               <Route path="cities" element={<CitiesList />} />

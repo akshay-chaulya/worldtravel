@@ -4,6 +4,7 @@ import OverlayContainer from "./OverlayContainer";
 import { closeConfirmation } from "../features/auth/authSlice";
 import { useLogout } from "../features/auth/authHookes";
 import { useDeleteCity } from "../features/user/cities/citiesHookes";
+import { useNavigate } from "react-router-dom";
 
 const ConfimationModal = () => {
   const {
@@ -12,6 +13,7 @@ const ConfimationModal = () => {
     confimationAdditionalData,
   } = useSelector(selectAuthStates);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // action logic
   const logout = useLogout();
@@ -21,9 +23,15 @@ const ConfimationModal = () => {
     switch (confimationActionType) {
       case "LOGOUT":
         logout();
+        navigate("/login");
         break;
       case "DELETE_CITY":
         deleteCity(confimationAdditionalData.cityId);
+        break;
+      case "DELETE_ACCOUNT":
+        console.log("account deleted");
+        logout();
+        navigate("/signup");
         break;
     }
     dispatch(closeConfirmation());

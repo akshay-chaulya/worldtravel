@@ -29,8 +29,9 @@ const ResetPassword = () => {
       <input
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border border-gray-300  text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  font-medium text-md bg-white"
-        type="text"
+        className="border border-gray-300  text-lg rounded-lg block w-full p-2.5  font-medium text-md bg-white outline-none"
+        type="email"
+        required
         placeholder="Enter your email"
       />
       <Button onClick={handleSubmit} />

@@ -23,6 +23,14 @@ const UserMenu = ({ isUserMenuOpen, setIsUserMenuOpen, user }) => {
     );
   }
 
+  function handleDeleteAccount() {
+    dispatch(
+      openConfirmation({
+        message: "Are you sure you want to delete your account?",
+        actionType: "DELETE_ACCOUNT",
+      })
+    );
+  }
   return (
     <div
       className={`user-menu z-50 absolute top-6 right-0 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600 ${
@@ -68,11 +76,8 @@ const UserMenu = ({ isUserMenuOpen, setIsUserMenuOpen, user }) => {
                   Reset password
                 </Link>
               </li>
-              <li>
-                <a
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                  href="#"
-                >
+              <li onClick={handleDeleteAccount}>
+                <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                   Delete account
                 </a>
               </li>
@@ -81,12 +86,9 @@ const UserMenu = ({ isUserMenuOpen, setIsUserMenuOpen, user }) => {
           )}
         </li>
         <li onClick={handleLogout}>
-          <Link
-            to="/login"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-          >
+          <a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
             Logout
-          </Link>
+          </a>
         </li>
       </ul>
     </div>

@@ -6,6 +6,19 @@
   @apply p-0 m-0 box-border;
 }
 
+input,textarea {
+  @apply  focus:ring-2 focus:ring-blue-500
+}
+
+input:user-invalid, textarea:user-invalid {
+  @apply focus:ring-2 focus:ring-red-500
+}
+
+input:user-valid, textarea:user-valid {
+  @apply focus:ring-2 focus:ring-blue-500
+}
+
+
 .main-nav li .active {
   @apply md:text-blue-700;
   /* background-color: blue; */

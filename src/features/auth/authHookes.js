@@ -35,11 +35,10 @@ export const useCheckAuth = () => {
       return data;
     },
     enabled: isQueryEnable && !!token, // Ensure query only runs if token exists
-    retry: 3, // Disable retries in case of failure
+    // retry: 3, // Disable retries in case of failure
     // retryDelay: 1000,
-    // refetchOnReconnect: true,
-    // refetchOnWindowFocus: true, // Prevent auto refetch on window focus
-    cachTime: 0,
+    refetchOnReconnect: false,
+    refetchOnWindowFocus: false, // Prevent auto refetch on window focus
   });
 
   useEffect(() => {

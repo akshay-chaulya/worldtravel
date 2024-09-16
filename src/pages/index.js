@@ -1,5 +1,4 @@
 import About from "./About";
-import Posts from "./Posts";
 import ContactUs from "./ContactUs";
 import AppLayout from "./AppLayout";
 import Home from "./Home";
@@ -14,7 +13,6 @@ export {
   CreateNewPassword,
   ResetPassword,
   About,
-  Posts,
   ContactUs,
   AppLayout,
   Home,

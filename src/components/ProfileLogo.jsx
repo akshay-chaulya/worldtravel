@@ -9,7 +9,7 @@ const ProfileLogo = ({
     <button
       onClick={onClick}
       type="button"
-      className={`flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 ${className}`}
+      className={`flex text-sm bg-gray-800 rounded-full md:me-0 ${className}`}
     >
       <img
         className={`h-9 w-9 h-${height} w-${width} rounded-full`}

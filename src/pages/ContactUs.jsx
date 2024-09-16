@@ -33,7 +33,7 @@ const ContactUs = () => {
               label="Name"
               labelClass="block mb-1 text-sm font-semibold"
               inputName="name"
-              inputClass="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              inputClass="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your name"
               required={true}
               onChange={handleChange}
@@ -47,7 +47,7 @@ const ContactUs = () => {
               labelClass="block mb-1 text-sm font-semibold"
               inputName="email"
               inputType="email"
-              inputClass="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              inputClass="w-full px-4 py-2 border  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter your email"
               onChange={handleChange}
               required={true}
@@ -60,7 +60,7 @@ const ContactUs = () => {
             <textarea
               name="message"
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 "
               rows="4"
               placeholder="Enter your message"
               required
