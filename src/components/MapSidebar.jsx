@@ -10,7 +10,7 @@ const MapSidebar = () => {
 
   return (
     <div
-      className={`z-10 flex flex-col items-center gap-y-6 p-5 md:px-28 lg:px-5 max-sm:px-1 bg-[rgb(45,52,57)] text-white md:row-start-1 lg:relative absolute lg:w-auto w-full h-full lg:translate-x-0 transition-transform sm:rounded-xl shadow-md ${
+      className={`z-10 flex flex-col items-center gap-y-4 p-5 md:px-28 lg:px-5 max-sm:px-1 bg-[rgb(45,52,57)] text-white md:row-start-1 lg:relative absolute lg:w-auto w-full h-full lg:translate-x-0 transition-transform sm:rounded-xl shadow-md ${
         isSidebarOpen ? "translate-x-0" : "translate-x-[-150%]"
       } `}
     >
