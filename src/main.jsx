@@ -6,7 +6,14 @@ import { store } from "./app/store.js";
 import "./index.css";
 
 // Create a react query client
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+      staleTime: 10 * 1000,
+    }
+  }
+});
 
 createRoot(document.getElementById("root")).render(
   <>

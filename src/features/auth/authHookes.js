@@ -24,7 +24,7 @@ export const useCheckAuth = () => {
   const isQueryEnable = useSelector(selectApiStatus);
   const dispatch = useDispatch();
   const token = getToken();
-
+  console.log(isQueryEnable)
   const { data, error, isSuccess, isLoading } = useQuery({
     queryKey: ["user"],
     queryFn: async () => {
@@ -34,14 +34,11 @@ export const useCheckAuth = () => {
       });
       return data;
     },
-    enabled: isQueryEnable && !!token, // Ensure query only runs if token exists
-    // retry: 3, // Disable retries in case of failure
-    // retryDelay: 1000,
-    refetchOnReconnect: false,
-    refetchOnWindowFocus: false, // Prevent auto refetch on window focus
+    enabled: !!token,
+    retry: 0
   });
 
-  useEffect(() => {
+  // useEffect(() => {
     if (isLoading) {
       dispatch(setLoading(true));
     } else {
@@ -56,7 +53,7 @@ export const useCheckAuth = () => {
       dispatch(logout());
       dispatch(setErrorNotification(structuredError(error)));
     }
-  }, [isSuccess, data, error, isLoading, dispatch]);
+  // }, [isSuccess, data, error, isLoading, dispatch]);
   return { data, error, isSuccess, isLoading };
 };
 
